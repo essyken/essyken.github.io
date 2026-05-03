@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # iyf-s10-week-01-essyken
 WEB FOUNDATIONS
 ##Author
@@ -27,3 +28,6 @@ unable to push file in Vs code to github had to Git add them from the main repos
 ![Screenshot description](path/to/screenshot.png)
 
 ## Live Demo (if deployed)
+=======
+# essyken.github.io
+>>>>>>> e6ad2ab90b1239ebc67e84400890e199e379e638
