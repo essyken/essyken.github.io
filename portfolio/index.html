@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Esther Njoroge — Home</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Hero */
+    .hero {
+      min-height: calc(100vh - 64px);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .hero-content {
+      padding: 6rem 3rem 4rem;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .hero-tag {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+      display: flex; align-items: center; gap: 0.75rem;
+    }
+    .hero-tag::before { content: ''; display: inline-block; width: 2rem; height: 1px; background: var(--accent); }
+    .hero-name {
+      font-family: var(--serif);
+      font-size: clamp(3rem, 5vw, 5.5rem);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+    }
+    .hero-name em { font-style: italic; color: var(--accent); }
+    .hero-tagline {
+      font-size: 1.05rem;
+      color: var(--ink-muted);
+      line-height: 1.75;
+      max-width: 40ch;
+      margin-bottom: 1rem;
+      font-weight: 300;
+    }
+    .hero-intro {
+      font-size: 0.92rem;
+      color: var(--ink-muted);
+      line-height: 1.75;
+      max-width: 46ch;
+      margin-bottom: 2.5rem;
+      font-weight: 300;
+    }
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .hero-visual {
+      background: linear-gradient(155deg, var(--accent-pale) 0%, #EDE8DF 100%);
+      position: relative;
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden;
+    }
+    .hero-visual::before {
+      content: '';
+      position: absolute;
+      width: 340px; height: 340px;
+      border-radius: 50%;
+      border: 50px solid rgba(192,90,47,0.07);
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .hero-visual::after {
+      content: '';
+      position: absolute;
+      width: 520px; height: 520px;
+      border-radius: 50%;
+      border: 1px solid rgba(192,90,47,0.14);
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .avatar-wrapper {
+      position: relative; z-index: 2;
+      width: 220px; height: 220px;
+      border-radius: 50%;
+      background: var(--surface);
+      border: 4px solid var(--surface);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+      overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .avatar-wrapper img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+    .avatar-initials {
+      font-family: var(--serif);
+      font-size: 4rem;
+      color: var(--accent);
+      user-select: none;
+    }
+    .location-pill {
+      position: absolute;
+      bottom: 2.5rem; left: 50%; transform: translateX(-50%);
+      background: var(--surface);
+      border: 1px solid var(--border-soft);
+      border-radius: 2rem;
+      padding: 0.45rem 1.1rem;
+      font-size: 0.78rem;
+      color: var(--ink-muted);
+      white-space: nowrap;
+      z-index: 3;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+    }
+
+    /* Quick links strip */
+    .quick-links {
+      background: var(--surface);
+      border-top: 1px solid var(--border-soft);
+      border-bottom: 1px solid var(--border-soft);
+      padding: 2.5rem 3rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+    }
+    .quick-link-item {
+      padding: 2rem 2rem;
+      border-right: 1px solid var(--border-soft);
+      text-decoration: none;
+      color: var(--ink);
+      transition: background 0.2s;
+      display: block;
+    }
+    .quick-link-item:last-child { border-right: none; }
+    .quick-link-item:hover { background: var(--accent-pale); }
+    .quick-link-num {
+      font-size: 0.75rem;
+      color: var(--accent);
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.75rem;
+    }
+    .quick-link-title {
+      font-family: var(--serif);
+      font-size: 1.4rem;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.4rem;
+    }
+    .quick-link-desc { font-size: 0.83rem; color: var(--ink-muted); font-weight: 300; }
+    .quick-link-arrow {
+      display: block;
+      margin-top: 1.25rem;
+      font-size: 1.25rem;
+      color: var(--accent);
+      transition: transform 0.2s;
+    }
+    .quick-link-item:hover .quick-link-arrow { transform: translateX(4px); }
+
+    @media (max-width: 768px) {
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-content { padding: 3rem 1.5rem 2rem; }
+      .hero-visual { min-height: 260px; }
+      .quick-links { grid-template-columns: 1fr; padding: 0; gap: 0; }
+      .quick-link-item { border-right: none; border-bottom: 1px solid var(--border-soft); padding: 1.5rem; }
+      .quick-link-item:last-child { border-bottom: none; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">Portfolio</a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <p class="hero-tag fade-up">Based in Nairobi, Kenya</p>
+    <h1 class="hero-name fade-up-1">Hello, I'm<br><em>Essyken</em></h1>
+    <p class="hero-tagline fade-up-2">Junior Web Developer</p>
+    <p class="hero-intro fade-up-2">I build clean, responsive, and user-friendly websites — combining creativity with technical skills to craft meaningful digital experiences.</p>
+    <div class="hero-actions fade-up-3">
+      <a href="projects.html" class="btn-primary">View My Projects</a>
+      <a href="about.html" class="btn-ghost">About Me</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="avatar-wrapper fade-up-1">
+      <img src="../images/Esther.jpg" alt="Esther Njoroge">
+    </div>
+    <div class="location-pill">📍 Nairobi, Kenya · UTC+3</div>
+  </div>
+</section>
+
+<!-- QUICK PAGE LINKS -->
+<div class="quick-links">
+  <a class="quick-link-item" href="about.html">
+    <p class="quick-link-num">01</p>
+    <h2 class="quick-link-title">About Me</h2>
+    <p class="quick-link-desc">My story, skills, and education journey</p>
+    <span class="quick-link-arrow">→</span>
+  </a>
+  <a class="quick-link-item" href="projects.html">
+    <p class="quick-link-num">02</p>
+    <h2 class="quick-link-title">Projects</h2>
+    <p class="quick-link-desc">Things I've built and am learning from</p>
+    <span class="quick-link-arrow">→</span>
+  </a>
+  <a class="quick-link-item" href="contact.html">
+    <p class="quick-link-num">03</p>
+    <h2 class="quick-link-title">Contact</h2>
+    <p class="quick-link-desc">Let's work together or just say hello</p>
+    <span class="quick-link-arrow">→</span>
+  </a>
+</div>
+
+<footer>
+  <span class="footer-brand">Essyken</span>
+  <nav class="footer-nav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <p>© 2026 Essyken</p>
+</footer>
+
+</body>
+</html>
