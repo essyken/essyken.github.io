@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Esther Njoroge</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.8fr;
+      gap: 5rem;
+      align-items: start;
+      max-width: 1100px;
+    }
+    .about-sticky { position: sticky; top: 5rem; }
+    .about-avatar {
+      width: 180px; height: 180px;
+      border-radius: 50%;
+      background: var(--accent-pale);
+      border: 3px solid var(--surface);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.09);
+      overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1.75rem;
+    }
+    .about-avatar img { width: 100%; height: 100%; object-fit: cover; }
+    .about-avatar-initials {
+      font-family: var(--serif);
+      font-size: 3.5rem;
+      color: var(--accent);
+    }
+    .about-name {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.25rem;
+    }
+    .about-role { font-size: 0.85rem; color: var(--ink-muted); margin-bottom: 1.5rem; }
+    .about-meta { display: flex; flex-direction: column; gap: 0.6rem; }
+    .about-meta-item { display: flex; align-items: center; gap: 0.6rem; font-size: 0.83rem; color: var(--ink-muted); }
+    .about-meta-item span:first-child { color: var(--accent); font-size: 0.9rem; }
+
+    .about-body { display: flex; flex-direction: column; gap: 3.5rem; }
+
+    .story-text {
+      font-size: 1.05rem;
+      color: var(--ink-muted);
+      line-height: 1.85;
+      font-weight: 300;
+    }
+    .story-text + .story-text { margin-top: 1.1rem; }
+    .story-text strong { color: var(--ink); font-weight: 500; }
+
+    /* Skills */
+    .skills-section {}
+    .skills-category { margin-bottom: 1.75rem; }
+    .skills-category-label {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      margin-bottom: 0.75rem;
+    }
+
+    /* Timeline */
+    .timeline { display: flex; flex-direction: column; gap: 0; }
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 120px 1px 1fr;
+      gap: 0 1.5rem;
+      padding-bottom: 2.5rem;
+    }
+    .timeline-item:last-child { padding-bottom: 0; }
+    .timeline-date {
+      font-size: 0.78rem;
+      color: var(--ink-faint);
+      font-weight: 400;
+      padding-top: 0.2rem;
+      text-align: right;
+    }
+    .timeline-line-col { display: flex; flex-direction: column; align-items: center; }
+    .timeline-dot {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+      margin-top: 0.3rem;
+      border: 2px solid var(--surface);
+      box-shadow: 0 0 0 2px var(--accent);
+    }
+    .timeline-line {
+      width: 1px;
+      flex: 1;
+      background: var(--border);
+      margin-top: 6px;
+    }
+    .timeline-item:last-child .timeline-line { display: none; }
+    .timeline-body {}
+    .timeline-title {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.2rem;
+    }
+    .timeline-org {
+      font-size: 0.82rem;
+      color: var(--accent);
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+    .timeline-desc { font-size: 0.875rem; color: var(--ink-muted); line-height: 1.65; font-weight: 300; }
+
+    @media (max-width: 768px) {
+      .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .about-sticky { position: static; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">Portfolio</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="page-header fade-up">
+  <p class="page-header-tag">Who I am</p>
+  <h1>About <em>Me</em></h1>
+  <p>A junior web developer from Kenya, driven by curiosity and a love for building things on the web.</p>
+</div>
+
+<div class="section">
+  <div class="about-grid">
+
+    <!-- SIDEBAR -->
+    <aside class="about-sticky fade-up-1">
+      <div class="about-avatar">
+        <img src="../images/Esther.jpg" alt="Esther Njoroge">
+        <span class="about-avatar-initials" style="display:none;">EN</span>
+      </div>
+      <h2 class="about-name">Esther Njoroge</h2>
+      <p class="about-role">Junior Web Developer</p>
+      <div class="about-meta">
+        <div class="about-meta-item"><span>📍</span><span>Nairobi, Kenya</span></div>
+        <div class="about-meta-item"><span>🕐</span><span>UTC+3 (EAT)</span></div>
+        <div class="about-meta-item"><span>✉️</span><span>njorogeesther356@gmail.com</span></div>
+        <div class="about-meta-item"><span>📞</span><span>+254 724 804 069</span></div>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <div class="about-body fade-up-2">
+
+      <!-- Story -->
+      <div>
+        <p class="section-label">My background</p>
+        <h2 class="section-title">My Story</h2>
+        <p class="story-text">
+          My journey into web development started with a simple question: <strong>how do websites actually work?</strong> That curiosity quickly turned into a deep fascination with building my own — writing HTML, watching a blank page come alive, and iterating until it looked just right.
+        </p>
+        <p class="story-text">
+          I'm a <strong>self-motivated junior developer</strong> who believes every line of code is a chance to grow. I enjoy the challenge of turning ideas into functional interfaces, and I'm especially passionate about <strong>front-end development</strong> — where technical skill meets creativity.
+        </p>
+        <p class="story-text">
+          Currently sharpening my skills through the <strong>IYF Web Development Programme</strong>, I'm building projects, learning best practices, and working towards a career as a professional developer.
+        </p>
+      </div>
+
+      <!-- Skills -->
+      <div>
+        <p class="section-label">What I know</p>
+        <h2 class="section-title">Skills</h2>
+        <div class="skills-category">
+          <p class="skills-category-label">Languages &amp; Markup</p>
+          <div class="skills-wrap">
+            <span class="skill-tag">HTML5</span>
+            <span class="skill-tag">CSS3</span>
+            <span class="skill-tag">JavaScript</span>
+          </div>
+        </div>
+        <div class="skills-category">
+          <p class="skills-category-label">Tools &amp; Workflow</p>
+          <div class="skills-wrap">
+            <span class="skill-tag">VS Code</span>
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">GitHub</span>
+            <span class="skill-tag">GitHub Pages</span>
+            <span class="skill-tag">Chrome DevTools</span>
+          </div>
+        </div>
+        <div class="skills-category">
+          <p class="skills-category-label">Concepts</p>
+          <div class="skills-wrap">
+            <span class="skill-tag">Responsive Design</span>
+            <span class="skill-tag">Debugging</span>
+            <span class="skill-tag">Semantic HTML</span>
+            <span class="skill-tag">Flexbox &amp; Grid</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Timeline -->
+      <div>
+        <p class="section-label">My journey</p>
+        <h2 class="section-title">Education &amp; Experience</h2>
+        <div class="timeline">
+
+          <div class="timeline-item">
+            <span class="timeline-date">2026 — Present</span>
+            <div class="timeline-line-col"><div class="timeline-dot"></div><div class="timeline-line"></div></div>
+            <div class="timeline-body">
+              <h3 class="timeline-title">Web Development Programme</h3>
+              <p class="timeline-org">IYF (International Youth Fellowship)</p>
+              <p class="timeline-desc">Full-stack web development track covering HTML, CSS, JavaScript, React, Node.js, and deployment. Building real projects each week.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <span class="timeline-date">2025</span>
+            <div class="timeline-line-col"><div class="timeline-dot"></div><div class="timeline-line"></div></div>
+            <div class="timeline-body">
+              <h3 class="timeline-title">Self-Study: Web Fundamentals</h3>
+              <p class="timeline-org">Online Resources &amp; Practice</p>
+              <p class="timeline-desc">Learned HTML &amp; CSS through tutorials and hands-on projects. Built first static pages and understood how browsers render content.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <span class="timeline-date">2024</span>
+            <div class="timeline-line-col"><div class="timeline-dot"></div><div class="timeline-line"></div></div>
+            <div class="timeline-body">
+              <h3 class="timeline-title">Secondary School Certificate</h3>
+              <p class="timeline-org">Kenya National Examinations Council</p>
+              <p class="timeline-desc">Completed secondary education. Developed interest in computers and technology during this period.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <span class="timeline-date">2023</span>
+            <div class="timeline-line-col"><div class="timeline-dot"></div><div class="timeline-line"></div></div>
+            <div class="timeline-body">
+              <h3 class="timeline-title">First Steps in Tech</h3>
+              <p class="timeline-org">Personal Exploration</p>
+              <p class="timeline-desc">First encounter with web browsers, basic computer skills, and the curiosity that sparked the question: how does this all work?</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<footer>
+  <span class="footer-brand">Essyken</span>
+  <nav class="footer-nav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <p>© 2026 Essyken</p>
+</footer>
+
+</body>
+</html>
